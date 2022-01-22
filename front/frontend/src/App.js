@@ -1,13 +1,17 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { TextField } from '@material-ui/core';
+import TextAddButton from './TextAddButton';
+
 
 function App() {
-  // const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         
         <p>ReactとFlaskで通信したい</p>
 
@@ -17,9 +21,21 @@ function App() {
         value={content} 
         onChange={(e) => {SVGTextContentElement(e.target.value);}} /> */}
 
-        {/* <TextField setText={setText} text={text}/> */}
+        <TextField 
+        setText={setText} 
+        onChange={(e) => {setText(e.target.value);}}
+        autoFocus
+        />
 
-        <button id="button">送信</button>
+        <TextAddButton></TextAddButton>
+
+        
+        
+        
+       
+      
+         
+        
         
         <div id="add"></div>
 
@@ -34,7 +50,7 @@ function App() {
           {/* Learn React
         </a> */}
 
-      </header>
+      
     </div>
   );
 }
