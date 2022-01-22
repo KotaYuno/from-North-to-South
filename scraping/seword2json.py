@@ -29,14 +29,14 @@ def createJsonData(tb, category):
         pro = tdlist[4*i+1]
         mean = tdlist[4*i+2]
         example = tdlist[4*i+3]
-        obj[word] = {
+        obj[word] = [{
             # "id" : id_global,
             # "word" : word,
-            "pronunce" : pro,
+            "pronounce" : pro,
             "mean" : mean,
             "example" : example,
             "category" : category
-        }
+        }]
         objdirc.update(obj)
         # id_global = id_global+1
     return objdirc
