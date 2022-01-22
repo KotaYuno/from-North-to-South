@@ -6,9 +6,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          ReactとFlaskで通信したい
-        </p>
+        
+        <p>ReactとFlaskで通信したい</p>
+
+        <input id="text" type="text" />
+
+        <button id="button">送信</button>
+        
+        <div id="add"></div>
 
         
 
