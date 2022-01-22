@@ -18,7 +18,7 @@ function Copyright() {
         target="_blank"
         rel="noopener"
       >
-        はむさん
+        from-North-to-South
       </Link>
     </Typography>
   );
