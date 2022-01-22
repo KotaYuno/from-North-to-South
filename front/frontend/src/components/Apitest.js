@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
+import axios from 'axios'
+
+axios.defaults.withCredentials = true; 
 
 URL = "http://127.0.0.1:5000/resive";
+// URL = "https://jsonplaceholder.typicode.com/posts";
 
 const Apitest = () => {
 
-    const data = []
-    const textvalue = "投げる"
+    const [data, setData] = useState([])
+
+    const textvalue = "渡す";
 
     const param = {
         method: "POST",
@@ -14,20 +19,33 @@ const Apitest = () => {
         },
         body: JSON.stringify({ text: textvalue }),
       };
+      
 
     useEffect(() => {
+        // axios.post(URL, {
+        //         text: textvalue
+        //     }).then(function(res) {
+        //         setData(res);
+        //     })
+
+        // fetch(URL, param)
+        // .then((response) => response.text())
+        // .then((text_resive) => {
+        //   setData(text_resive);
+        // });
+
         fetch(URL, param)
-        .then((response) => response.text())
-        .then((text_resive) => {
-          data = text_resive;
+        .then((response) => {
+            console.log(response);
+            setData(response)
         });
     }, [])
     
-      
+    
 
     return (
         <div>
-            <p>{data}</p>
+           {data}            
         </div>
     );
 };
