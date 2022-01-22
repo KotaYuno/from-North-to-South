@@ -7,12 +7,26 @@ def search_word(word):
         print(json_load[word])
         return json_load[word]
     except:
+        print("None")
         return "None"
-def insert_word(word,mean,category=None):
-    json_file = open("seword.json", 'w',encoding="utf-8_sig")
-    json.dump(json_file,word)
-    json.dump(json_file,mean)
-    json.dump(json_file,category)
+
+def insert_word(word,pro=None,mean=None,ex=None,cate=None):
+    json_file = open("seword.json", 'r',encoding="utf-8_sig")
+    json_load = json.load(json_file)
+    data = json_load[word]
+    new_data = {
+        "pronounce": pro,
+        "mean": mean,
+        "example": ex,
+        "category": cate
+        }
+    data.append(new_data)
+    json_load[word] = data
+    with open('./seword.json', 'w') as f:
+        json.dump(json_load, f, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
+    insert_word('投げる')
     search_word('投げる')
+
+
