@@ -9,17 +9,17 @@ const TextAddButton = ({ text }) => {
     const requestOptions = {
         method: 'POST',
         headers:{'Content-Type': 'application/json'},
-        body: JSON.stringify({text: {text}})
+        body: JSON.stringify({text: { text }})
         };
-        fetch("/resive",requestOptions
+    fetch(url,requestOptions)
         //   resopnse
       
-        ).then((response)=> response.json()
-        ).then((responseJson) =>{
-        console.log(responseJson)
-        }).catch(()=>{
-        console.log("error");
-        })
+        // ).then((response)=> response.json()
+        // ).then((responseJson) =>{
+        // console.log(responseJson)
+        // }).catch(()=>{
+        // console.log("error");
+        // })
 
 
     const clickSubmit = (e) => {

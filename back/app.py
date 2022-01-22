@@ -2,6 +2,8 @@ from flask import Flask, jsonify, request, render_template, redirect, session
 import spacy
 import json
 
+from json_check import search_word
+
 async_mode = None
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -23,8 +25,7 @@ def resive():
     print(date["text"])
     literal_date = date["text"]
 
-    res = {"mean":literal_date}
-    return jsonify(res)
+    return jsonify(search_word(literal_date))
 
 if __name__ == "__main__":
     app.run()
