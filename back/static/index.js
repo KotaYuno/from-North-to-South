@@ -9,12 +9,12 @@ window.addEventListener('load', function(){
                 headers: {
                 "Content-Type": "application/json; charset=utf-8"
                 },
-            body: JSON.stringify({what: textvalue})
+            body: JSON.stringify({text: textvalue})
             }
             fetch("/resive", param)
                 .then(response => response.text())
-                .then(text => {
-                    document.querySelector("#add").innerHTML = text;
+                .then(text_resive => {
+                    document.querySelector("#add").innerHTML = text_resive;
                 })
         })
     }

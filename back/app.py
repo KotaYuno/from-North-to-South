@@ -19,9 +19,9 @@ def resive():
     print("access")
     date = request.get_json()
     print(date)
-    print(date["what"])
-    literal_date = date["what"]
-    res = {"result":literal_date}
+    print(date["text"])
+    literal_date = date["text"]
+    res = {"mean":literal_date}
     return jsonify(res)
 
 if __name__ == "__main__":
