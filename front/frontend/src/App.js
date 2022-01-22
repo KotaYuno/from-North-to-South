@@ -9,14 +9,18 @@ function App() {
         <p>
           ReactとFlaskで通信したい
         </p>
-        <a
+
+        
+
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        > */}
+          {/* Learn React
+        </a> */}
+
       </header>
     </div>
   );
