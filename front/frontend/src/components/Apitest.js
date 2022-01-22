@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from 'axios'
-
-axios.defaults.withCredentials = true; 
 
 URL = "http://127.0.0.1:5000/resive";
-// URL = "https://jsonplaceholder.typicode.com/posts";
 
 const Apitest = () => {
 
@@ -19,33 +15,32 @@ const Apitest = () => {
         },
         body: JSON.stringify({ text: textvalue }),
       };
-      
+    
 
     useEffect(() => {
-        // axios.post(URL, {
-        //         text: textvalue
-        //     }).then(function(res) {
-        //         setData(res);
-        //     })
-
-        // fetch(URL, param)
-        // .then((response) => response.text())
-        // .then((text_resive) => {
-        //   setData(text_resive);
-        // });
-
         fetch(URL, param)
-        .then((response) => {
-            console.log(response);
-            setData(response)
-        });
+            .then((response) => response.json())
+            .then((res) => {
+                console.log(res);
+                const list = [];
+                for (let i = 0; i < res.data.length; i++) {
+                    console.log(res.data[i].mean)
+                    list.push(res.data[i].mean)
+                }
+                // const data = res.data[0].category;
+                // console.log('aaaaaaa');
+                setData(list)
+            })
     }, [])
-    
-    
+
 
     return (
         <div>
-           {data}            
+            <ol>
+                {data.map((mean) => (
+                    <li> {mean}</li>
+                ))}
+            </ol>
         </div>
     );
 };
