@@ -5,8 +5,9 @@ def search_word(word):
     json_load = json.load(json_file)
     try:
         print(json_load[word])
+        return json_load[word]
     except:
-        pass
+        return "None"
 
 
 if __name__ == "__main__":
