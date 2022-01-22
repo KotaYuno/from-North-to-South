@@ -1,12 +1,13 @@
 // import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
-import { TextField } from '@material-ui/core';
-import TextAddButton from './TextAddButton';
+
+
+import MessageInputField from './MessageInputField';
 
 
 function App() {
-  const [text, setText] = useState('');
+  
 
   return (
     <div className="App">
@@ -21,22 +22,14 @@ function App() {
         value={content} 
         onChange={(e) => {SVGTextContentElement(e.target.value);}} /> */}
 
-        <TextField 
-        setText={setText} 
-        onChange={(e) => {setText(e.target.value);}}
-        autoFocus
-        />
+        <MessegeInputField />
+        
 
-        <TextAddButton></TextAddButton>
+        
 
         
         
-        
-       
-      
-         
-        
-        
+    
         <div id="add"></div>
 
         
