@@ -8,7 +8,7 @@ def search_word(word):
         return json_load[word]
     except:
         return "None"
-def insert_word(word,mean,category==none):
+def insert_word(word,mean,category=None):
     json_file = open("seword.json", 'w',encoding="utf-8_sig")
     json.dump(json_file,word)
     json.dump(json_file,mean)
