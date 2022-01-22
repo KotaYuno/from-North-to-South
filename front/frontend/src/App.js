@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // const [text, setText] = useState('');
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,7 +11,13 @@ function App() {
         
         <p>ReactとFlaskで通信したい</p>
 
-        <input id="text" type="text" />
+        {/* <input 
+        id="text" 
+        type="text" 
+        value={content} 
+        onChange={(e) => {SVGTextContentElement(e.target.value);}} /> */}
+
+        {/* <TextField setText={setText} text={text}/> */}
 
         <button id="button">送信</button>
         
