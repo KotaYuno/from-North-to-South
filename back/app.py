@@ -10,7 +10,7 @@ app.config.from_object(__name__)
 
 #自動でテンプレートが読み取られるかの確認
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-
+app.config['JSON_AS_ASCII'] = False
 
 
 @app.route("/")
@@ -25,7 +25,9 @@ def resive():
     print(date["text"])
     literal_date = date["text"]
 
-    return jsonify(search_word(literal_date))
+    tmp = search_word(literal_date)
+    print(tmp["category"])
+    return jsonify(tmp)
 
 if __name__ == "__main__":
     app.run()
