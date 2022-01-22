@@ -19,13 +19,13 @@ app.config['JSON_AS_ASCII'] = False
 def index():
     return render_template("index.html")
 
-@app.route("/resive", methods=["POST"])
-def resive():
-    date = request.get_json()
-    literal_date = date["text"]
 
-    tmp = search_word(literal_date)
-    return tmp
+
+@app.route("/resive/<msg>")
+def resive(msg):
+    print(msg)
+    tmp = {"date":search_word(msg)}
+    return jsonify(tmp)
 
 if __name__ == "__main__":
     app.run()
