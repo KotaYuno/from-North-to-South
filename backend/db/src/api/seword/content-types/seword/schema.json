@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sewords",
+  "info": {
+    "singularName": "seword",
+    "pluralName": "sewords",
+    "displayName": "seword",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "word": {
+      "type": "string",
+      "required": true
+    },
+    "pronounce": {
+      "type": "string"
+    },
+    "mean": {
+      "type": "text"
+    },
+    "example": {
+      "type": "text"
+    },
+    "category": {
+      "type": "string"
+    }
+  }
+}
