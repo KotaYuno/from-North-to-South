@@ -11,6 +11,8 @@ app.config.from_object(__name__)
 #自動でテンプレートが読み取られるかの確認
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
+#jsonファイルをASCIIでエンコードする為のもの
+app.config['JSON_AS_ASCII'] = False
 
 
 @app.route("/")
@@ -19,13 +21,11 @@ def index():
 
 @app.route("/resive", methods=["POST"])
 def resive():
-    print("access")
     date = request.get_json()
-    print(date)
-    print(date["text"])
     literal_date = date["text"]
 
-    return jsonify(search_word(literal_date))
+    tmp = search_word(literal_date)
+    return tmp
 
 if __name__ == "__main__":
     app.run()
