@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // URL = "http://127.0.0.1:5000/resive";
 URL = "https://eqitter.herokuapp.com/resive";
 
+
 const fetchData = (textvalue) => {
 
     // const [data, setData] = useState([])
