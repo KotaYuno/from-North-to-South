@@ -60,7 +60,7 @@ export default function SignIn({ setName }) {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
-          ようこそ
+          eqitterへようこそ
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
