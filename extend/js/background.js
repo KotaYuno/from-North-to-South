@@ -36,6 +36,13 @@ chrome.runtime.onInstalled.addListener(function() {
         "title": "Get Text!",
         "contexts": ["selection"],
     });
+
+    chrome.windows.create({
+        url: '../popup.html', 
+        type: 'popup',
+        width: 400, 
+        height: 300
+    });
  });
 
  chrome.contextMenus.onClicked.addListener(function(info){
@@ -73,10 +80,13 @@ chrome.runtime.onInstalled.addListener(function() {
             }
             // console.log(data[0])
             const msg = data[0]
+
+
             chrome.runtime.sendMessage(msg, function(response) {
                 // console.log(response);//メッセージの受け手がレスを返したときキャッチできる
                 console.log(msg)
             });
+            
         })
 
     
