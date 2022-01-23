@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Eqitter",
+  "version": "0.0.1",
+  "description": "選択したテキストを辞書検索",
+  "permissions": [
+      "contextMenus"
+  ],
+  "background": {
+      "scripts": ["background.js"]
+  }
+}
