@@ -11,6 +11,7 @@ def search_word(word):
         return "None"
 
 def insert_word(word,pro=None,mean=None,ex=None,cate=None):
+    #jsonファイルを読み取り専用で開いて，UTF-8に変換する
     json_file = open("seword.json", 'r',encoding="utf-8_sig")
     json_load = json.load(json_file)
     data = json_load[word]
