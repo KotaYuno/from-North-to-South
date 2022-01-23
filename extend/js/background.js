@@ -42,6 +42,7 @@ chrome.runtime.onInstalled.addListener(function() {
         type: 'popup',
         width: 400, 
         height: 300
+        // 'alwaysOnTop': true
     });
  });
 
@@ -76,7 +77,7 @@ chrome.runtime.onInstalled.addListener(function() {
         .then((res) => {
             for (let i = 0; i < res.data.length; i++) {
                 // console.log(res.data[i].mean)
-                data.push(res.data[i].mean)
+                data.push(res.data[i])
             }
             // console.log(data[0])
             const msg = data[0]
