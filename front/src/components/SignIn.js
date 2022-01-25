@@ -14,7 +14,7 @@ function Copyright() {
       {'Copyright © '}
       <Link
         color="inherit"
-        href="https://twitter.com/diveintohacking"
+        href="https://eqitter-b70ea.web.app/"
         target="_blank"
         rel="noopener"
       >
